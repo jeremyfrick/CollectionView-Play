@@ -11,6 +11,10 @@ import UIKit
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, searchResultsProtocol {
     var movies = [Movie]()
     var API: OnlineDataBaseSearch!
+    var mediaType: Int = 0
+    var searchFilter = ""
+    var currentSearchTerm = ""
+    
     @IBOutlet weak var selection: UISegmentedControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -19,16 +23,43 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         self.navigationController?.navigationBar.barTintColor = UIColor.blackColor()
         API = OnlineDataBaseSearch(delegate: self)
         self.selection.selectedSegmentIndex = 0
-        // Do any additional setup after loading the view, typically from a nib.
+        self.searchFilter = "movie"
     }
 
-    func didReceiveSearchResults(results:NSDictionary) {
+    func didReceiveSearchResults(results:JSON) {
         dispatch_async(dispatch_get_main_queue(),{
             self.movies = Movie.moviesWithJSON(results)
             self.collectionView!.reloadData()
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         })
     }
+    
+    @IBAction func mediaTypeChange(sender: UISegmentedControl) {
+        
+        switch selection.selectedSegmentIndex {
+        case 0:
+            mediaType = 0
+            searchFilter = "movie"
+            API.searchDataBase(currentSearchTerm, mediaType: searchFilter)
+            //self.collectionView!.reloadData()
+        case 1:
+            mediaType = 1
+            searchFilter = "series"
+            API.searchDataBase(currentSearchTerm, mediaType: searchFilter)
+            //self.collectionView!.reloadData()
+        case 2:
+            mediaType = 2
+            searchFilter = "episode"
+            API.searchDataBase(currentSearchTerm, mediaType: searchFilter)
+            //self.collectionView!.reloadData()
+        default:
+            mediaType = 0
+            searchFilter = ""
+           // self.collectionView!.reloadData()
+        }
+        
+    }
+    
     
     //MARK: - TableView
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -47,6 +78,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.layer.cornerRadius = 5
         cell.layer.masksToBounds = true
         return cell
+       
     }
 }
 
@@ -56,7 +88,8 @@ extension ViewController : UITextFieldDelegate {
         textField.addSubview(activityIndicator)
         activityIndicator.frame = textField.bounds
         activityIndicator.startAnimating()
-        API.searchDataBase(textField.text)
+        currentSearchTerm = textField.text!
+        API.searchDataBase(textField.text!, mediaType: searchFilter)
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         activityIndicator.removeFromSuperview()
         textField.text = nil

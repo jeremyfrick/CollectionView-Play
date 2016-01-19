@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9634FAE71C4DF21B0026844D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9634FAE61C4DF21B0026844D /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		96DD388C1B2161D90089D2D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DD388B1B2161D90089D2D6 /* AppDelegate.swift */; };
 		96DD388E1B2161D90089D2D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96DD388D1B2161D90089D2D6 /* ViewController.swift */; };
 		96DD38911B2161D90089D2D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96DD388F1B2161D90089D2D6 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9634FAE61C4DF21B0026844D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		96DD38861B2161D90089D2D6 /* CollectionView Play.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CollectionView Play.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96DD388A1B2161D90089D2D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96DD388B1B2161D90089D2D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				96DD388F1B2161D90089D2D6 /* Main.storyboard */,
 				96DD38AB1B2167390089D2D6 /* MultipleMovies.swift */,
 				96DD38AD1B2167430089D2D6 /* OnlineDataBaseSearch.swift */,
+				9634FAE61C4DF21B0026844D /* SwiftyJSON.swift */,
 				96DD38AF1B21692A0089D2D6 /* MovieCell.swift */,
 				96DD38921B2161D90089D2D6 /* Images.xcassets */,
 				96DD38941B2161D90089D2D6 /* LaunchScreen.xib */,
@@ -165,7 +168,8 @@
 		96DD387E1B2161D90089D2D6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Red Anchor Software";
 				TargetAttributes = {
 					96DD38851B2161D90089D2D6 = {
@@ -224,6 +228,7 @@
 				96DD38AC1B2167390089D2D6 /* MultipleMovies.swift in Sources */,
 				96DD38AE1B2167430089D2D6 /* OnlineDataBaseSearch.swift in Sources */,
 				96DD388E1B2161D90089D2D6 /* ViewController.swift in Sources */,
+				9634FAE71C4DF21B0026844D /* SwiftyJSON.swift in Sources */,
 				96DD38B01B21692A0089D2D6 /* MovieCell.swift in Sources */,
 				96DD388C1B2161D90089D2D6 /* AppDelegate.swift in Sources */,
 			);
@@ -288,6 +293,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -354,6 +360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CollectionView Play/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RedAnchorSoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -364,6 +371,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CollectionView Play/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RedAnchorSoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -382,6 +390,7 @@
 				);
 				INFOPLIST_FILE = "CollectionView PlayTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RedAnchorSoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CollectionView Play.app/CollectionView Play";
 			};
@@ -397,6 +406,7 @@
 				);
 				INFOPLIST_FILE = "CollectionView PlayTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RedAnchorSoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CollectionView Play.app/CollectionView Play";
 			};
@@ -421,6 +431,7 @@
 				96DD38A71B2161D90089D2D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		96DD38A81B2161D90089D2D6 /* Build configuration list for PBXNativeTarget "CollectionView PlayTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +440,7 @@
 				96DD38AA1B2161D90089D2D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
